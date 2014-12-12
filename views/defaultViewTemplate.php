@@ -1,6 +1,5 @@
 
 <?php 
-
 ?>
 <div id="defaultView">
     <h2>Fresh Food Finder1212</h2>

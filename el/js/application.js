@@ -23,11 +23,11 @@ $(document).ready( function(){
 	
 	if(locale == 'en')
 	{
-		window.location.replace("el/index.html");
+		window.location.redirect("index.html");
 	}
 	else
 	{
-		window.location.replace("index.html");
+		window.location.redirect("index.html");
 	}
 	//localization = {
 		//"de": "Hallo Benutzer!",

@@ -14,29 +14,48 @@ var viewAssembler = new ViewAssembler();
 $(document).ready( function(){
     loadTemplates( setupDefaultView );
 	
-	alert(navigator["language"]);
+	checkLanguage();
 	
+	//alert(navigator["language"]);
 	locale = (navigator["language"] || "en").split("-")[0];
 
-	alert(locale);
+	//alert(locale);
 	localization = {
 		"de": "Hallo Benutzer!",
-		"en": "Hey user!"
+		"en": "φ"
 	};
 
 	text = localization[locale] || localization["en"];
 	
 	alert(text);
+	
+	
+	language = navigator.language.split("-");
+	language_root = (language[0]);
+	
+	alert(language_root);
 
 } );
-
 
 function setupDefaultView() { 
     
     var bodyView = viewAssembler.defaultView(); 
     
+	//alert(navigator["language"]);
+	locale = (navigator["language"] || "en").split("-")[0];
+
+	if(locale == 'el')
+	{
+		window.location.replace("index.html");
+	}
+	else
+	{
+		window.location.replace("index_gr.html");		
+	}
+	
+	
     //Setup the default view
-    var defaultView = { title: "Welcome!", 
+    var defaultView = { title: localization[locale], 
     view:  bodyView,
     };
     

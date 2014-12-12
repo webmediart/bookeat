@@ -1,7 +1,3 @@
-
-
- 
- 
  
 var templates = {
     aboutViewTemplate:"views/aboutViewTemplate.html",

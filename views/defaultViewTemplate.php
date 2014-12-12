@@ -3,7 +3,7 @@
 
 ?>
 <div id="defaultView">
-    <h2>Fresh Food Finder222</h2>
+    <h2>Fresh Food Finder1212</h2>
     <div><a id="nearMe" href="#">Find Markets Near Me</a></div>
     <div><a id="search" href="#">Search For a Market</a></div>
     <div><a id="about" href="#">About This App</a></div>

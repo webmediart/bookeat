@@ -3,9 +3,7 @@
 
 ?>
 <div id="defaultView">
-    <h2>Fresh Food Finder1212</h2>
-	<input type="radio" name="sex" value="male">Male<br>
-	<input type="radio" name="sex" value="female">Female
+    <h2>Fresh Food Finder</h2>
 	
 	
     <div><a id="nearMe" href="#">Find Markets Near Me</a></div>

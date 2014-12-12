@@ -1,6 +1,4 @@
 
-
-
 * {
 -webkit-touch-callout: none;
 -webkit-user-select: none;
@@ -24,7 +22,7 @@ body {
 	background-color:#555;
 }
 * {
-    font-family:'SansationRegular', Arial, sans-serif;
+    font-family:'Georgia', Arial, sans-serif;
     letter-spacing: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
 }
@@ -144,14 +142,16 @@ body {
 
 .viewNavigator_contentHolder {
     color:#444;
-    background:#999;
+    /*background:#999;*/
+	background: #95b017;
     border-left:1px solid #999;
     border-right:1px solid #999;
 }
 
 .viewNavigator_contentHolder > div:first-child {
     min-height:100%;
-    background:#EDEDED;
+    /*background:#EDEDED;*/
+	background: #95b017;
     /*background-image:url('graphics/wheat_bg.png');
     background-position: top left;
     background-repeat:repeat;*/
@@ -201,16 +201,21 @@ body {
 }
 
 #defaultView {
-    background-image:url('graphics/wheat_bg_nocolor.png');
-    background-position: bottom center;
+/*    background-image:url('graphics/wheat_bg_nocolor.png');*/
+    background-image:url('graphics/bookeat-logo.png');
+
+    background-position: top center;
     background-repeat:no-repeat;
+	padding-top:200px;
 }
 
 
 
 @media only screen and (min-width:760px) {
     #defaultView {
-        background-image:url('graphics/wheat_bg.png');
+		background-image:url('graphics/bookeat-logo.png');	
+			padding-top:200px;
+/*        background-image:url('graphics/wheat_bg.png');*/
     }
 }
 
@@ -244,22 +249,28 @@ body {
 
 #defaultView #nearMe {
     padding-left:75px;
-    background-image:url('graphics/map_marker.png');
+    /*background-image:url('graphics/map_marker.png');*/
+	background-image:url('graphics/cat_restoraunt.png');
+	
     background-position: 15px center;
     background-repeat:no-repeat;
 }
 
 #defaultView #search {
     padding-left:75px;
-    background-image:url('graphics/search.png');
-    background-position: 5px center;
+    /*background-image:url('graphics/search.png');*/
+	background-image:url('graphics/cat_restoraunt2.png');
+	
+    background-position: 15px center;
     background-repeat:no-repeat;
 }
 
 #defaultView #about {
     padding-left:75px;
-    background-image:url('graphics/info.png');
-    background-position: 10px center;
+	background-image:url('graphics/cat_restoraunt3.png');
+	
+    /*background-image:url('graphics/info.png');*/
+    background-position: 15px center;
     background-repeat:no-repeat;
 }
 
@@ -493,4 +504,9 @@ label {
 #geoError div {
     padding:1.25em;
     padding-top:0px;
+}
+
+.logo {
+    margin: 20px 10px;
+    text-align: center;
 }

@@ -19,11 +19,11 @@ $(document).ready( function(){
 	//alert(navigator["language"]);
 	locale = (navigator["language"] || "en").split("-")[0];
 
-	alert(locale);
+	//alert(locale);
 	
 	if(locale == 'en')
 	{
-		window.location.replace("el/index.html");
+		window.location.replace("en/index.html");
 	}
 	else
 	{

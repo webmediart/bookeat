@@ -3,11 +3,9 @@
 
 ?>
 <div id="defaultView">
-    <h2>Fresh Food Finder</h2>
 	
-	
-    <div><a id="nearMe" href="#">Find Markets Near Me</a></div>
-    <div><a id="search" href="#">Search For a Market</a></div>
+    <div><a id="nearMe" href="#">Find Restaurants Near Me</a></div>
+    <div><a id="search" href="#">Search For Restaurants</a></div>
     <div><a id="about" href="#">About This App</a></div>
     <div id="preload" style="display:none">
         <div id="bakedgoods" class="amenities">Baked Goods</div>

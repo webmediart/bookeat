@@ -130,7 +130,7 @@ function onNearbyViewClick( event ) {
     window.viewNavigator.pushView( view );
     
     //acquire location
-    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, { maximumAge: 6000000, timeout: 5000, enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, { maximumAge: 6000, timeout: 1000, enableHighAccuracy: true });
     event.stopPropagation();
     return false;
 }
@@ -275,8 +275,12 @@ function onSearchButtonClick( event ) {
         var $input = $("#search_" + field);
         var value;
         
+		//
         if ( index <= 1 ){
             value = $input.val();
+			alert($input.val());
+		
+		
             
             if ( value != undefined && value.length > 0 ) {
                 criteria[field] = value;
@@ -291,6 +295,7 @@ function onSearchButtonClick( event ) {
     }
     
     var markets = filterMarketsBySearchCriteria( criteria );
+	//alert(markets);
     var view = { title: "Search Results",
              backLabel: (isTablet() ? "Back" : " "),
              view: viewAssembler.searchResultsView( markets, criteria )
@@ -302,10 +307,12 @@ function onSearchButtonClick( event ) {
 function filterMarketsBySearchCriteria( criteria ) {
     var result = [];
     var startTime = new Date().getTime();
+	//alert(markets.length);
     for ( var i =0; i < markets.length; i++ )
     {
         if ( marketRowMatchesCriteria( markets[i], criteria ) ) {
-            result.push(  markets[i] );
+            //alert(markets[i]);
+			result.push(  markets[i] );
         }
     }
     //console.log( new Date().getTime() - startTime );
@@ -315,6 +322,8 @@ function filterMarketsBySearchCriteria( criteria ) {
 function marketRowMatchesCriteria( row, criteria ) {
     
     //state
+	//alert(row[6]);
+	//alert(criteria.state);
     if ( row[6] != criteria.state ) { return false; }
                   
     if ( criteria.credit == true )      {    if ( row[11] != "Y" ) return false;    };

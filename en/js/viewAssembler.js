@@ -126,9 +126,9 @@ ViewAssembler.prototype.searchView = function () {
     var el = $( templates.searchViewTemplate );
     var $state = el.find( "#search_state" );
     
-    var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Puerto Rico","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virgin Islands","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
+    var states = ["Athens","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Chania","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Puerto Rico","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virgin Islands","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
     for ( var i in states ) {
-        $state.append($("<option></option>").text(states[i])); 
+        $state.append($("<option></option>").text(states[i]));
     }
     
     el.find( "#searchButton" ).on( this.CLICK_EVENT, onSearchButtonClick );
@@ -137,8 +137,12 @@ ViewAssembler.prototype.searchView = function () {
 
 ViewAssembler.prototype.searchResultsView = function( marketsArr, criteria ) {
     var viewModel = {markets:[]};
+	
+	
     for ( var i=0; i< marketsArr.length; i++ ) {
         var market = arrayToMarketObject( marketsArr[i] );
+		//alert(market);
+	
         viewModel.markets.push( market );
     }
     
@@ -148,9 +152,17 @@ ViewAssembler.prototype.searchResultsView = function( marketsArr, criteria ) {
         else return 0;
     });
     
+	
     viewModel.overLength = viewModel.markets.length > 50;
-    viewModel.markets = viewModel.markets.slice( 0, Math.min(49, viewModel.markets.length-1));
-    
+    // mike
+	if(viewModel.markets.length > 1)
+	{
+		viewModel.markets = viewModel.markets.slice( 0, Math.min(49, viewModel.markets.length-1));
+	}
+    //alert(viewModel.markets.length);
+	
+	
+	
     viewModel.criteria = criteriaToString(criteria);
     window.filteredMarkesList = viewModel.markets;  
     

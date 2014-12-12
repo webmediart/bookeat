@@ -3,7 +3,7 @@
 
 ?>
 <div id="defaultView">
-	
+	<h2>Please choose one of the two (2) following options in order to find the, best value for money, restaurant!</h2>
     <div><a id="nearMe" href="#">Find Restaurants Near Me</a></div>
     <div><a id="search" href="#">Search For Restaurants</a></div>
     <div><a id="about" href="#">About This App</a></div>

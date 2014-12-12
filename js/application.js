@@ -195,7 +195,7 @@ function filterMarketsByGeo( latitude, longitude ) {
         //console.log( lat1, lon1, lat2, lon2 );
         var d = distance( lat1, lon1, lat2, lon2 );
         //mike 100 miles 
-		if ( d < 100 ){
+		if ( d < 100000 ){
             result.push( markets[i] );
         }
         

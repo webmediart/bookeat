@@ -14,26 +14,26 @@ var viewAssembler = new ViewAssembler();
 $(document).ready( function(){
     loadTemplates( setupDefaultView );
 	
-	checkLanguage();
+	//checkLanguage();
 	
 	//alert(navigator["language"]);
-	locale = (navigator["language"] || "en").split("-")[0];
+	//locale = (navigator["language"] || "en").split("-")[0];
 
 	//alert(locale);
-	localization = {
-		"de": "Hallo Benutzer!",
-		"en": "φ"
-	};
+	//localization = {
+		//"de": "Hallo Benutzer!",
+		//"en": "φ"
+	//};
 
-	text = localization[locale] || localization["en"];
+	//text = localization[locale] || localization["en"];
 	
-	alert(text);
+	//alert(text);
 	
 	
-	language = navigator.language.split("-");
-	language_root = (language[0]);
+	//language = navigator.language.split("-");
+	//language_root = (language[0]);
 	
-	alert(language_root);
+	//alert(language_root);
 
 } );
 
@@ -44,7 +44,7 @@ function setupDefaultView() {
 	//alert(navigator["language"]);
 	locale = (navigator["language"] || "en").split("-")[0];
 
-	if(locale == 'el')
+	if(locale == 'en')
 	{
 		window.location.replace("index.html");
 	}

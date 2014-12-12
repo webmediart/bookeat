@@ -13,7 +13,23 @@ var viewAssembler = new ViewAssembler();
 
 $(document).ready( function(){
     loadTemplates( setupDefaultView );
+	
+	alert(navigator["language"]);
+	
+	locale = (navigator["language"] || "en").split("-")[0];
+
+	alert(locale);
+	localization = {
+		"de": "Hallo Benutzer!",
+		"en": "Hey user!"
+	};
+
+	text = localization[locale] || localization["en"];
+	
+	alert(text);
+
 } );
+
 
 function setupDefaultView() { 
     

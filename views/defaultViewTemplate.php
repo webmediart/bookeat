@@ -1,8 +1,13 @@
-
 <?php 
+
+
 ?>
 <div id="defaultView">
     <h2>Fresh Food Finder1212</h2>
+	<input type="radio" name="sex" value="male">Male<br>
+	<input type="radio" name="sex" value="female">Female
+	
+	
     <div><a id="nearMe" href="#">Find Markets Near Me</a></div>
     <div><a id="search" href="#">Search For a Market</a></div>
     <div><a id="about" href="#">About This App</a></div>

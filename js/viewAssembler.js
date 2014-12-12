@@ -1,4 +1,8 @@
 
+
+ 
+ 
+ 
 var templates = {
     aboutViewTemplate:"views/aboutViewTemplate.html",
     defaultViewTemplate:"views/defaultViewTemplate.php",

@@ -1,7 +1,7 @@
 
 var templates = {
     aboutViewTemplate:"views/aboutViewTemplate.html",
-    defaultViewTemplate:"views/defaultViewTemplate.html",
+    defaultViewTemplate:"views/defaultViewTemplate.php",
     findMarketsNearMeViewTemplate:"views/findMarketsNearMeViewTemplate.html",
     geoPermissionDeniedViewTemplate:"views/geoPermissionDeniedViewTemplate.html",
     mapViewTemplate:"views/mapViewTemplate.html",

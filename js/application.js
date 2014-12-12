@@ -106,7 +106,7 @@ function onNearbyViewClick( event ) {
     window.viewNavigator.pushView( view );
     
     //acquire location
-    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, { maximumAge: 6000000, timeout: 5000, enableHighAccuracy: true });
     event.stopPropagation();
     return false;
 }

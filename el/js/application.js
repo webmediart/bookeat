@@ -17,7 +17,7 @@ $(document).ready( function(){
 	//checkLanguage();
 	
 	//alert(navigator["language"]);
-	locale = (navigator["language"] || "en").split("-")[0];
+	//locale = (navigator["language"] || "en").split("-")[0];
 
 	
 	//localization = {

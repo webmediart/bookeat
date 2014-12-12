@@ -17,18 +17,7 @@ $(document).ready( function(){
 	//checkLanguage();
 	
 	//alert(navigator["language"]);
-	locale = (navigator["language"] || "en").split("-")[0];
-
-	alert(locale);
 	
-	if(locale == 'en')
-	{
-		window.location.replace("el/index.html");
-	}
-	else
-	{
-		window.location.replace("el/index.html");
-	}
 	//localization = {
 		//"de": "Hallo Benutzer!",
 		//"en": "φ"

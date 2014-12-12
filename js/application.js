@@ -42,20 +42,11 @@ function setupDefaultView() {
     var bodyView = viewAssembler.defaultView(); 
     
 	//alert(navigator["language"]);
-	locale = (navigator["language"] || "en").split("-")[0];
+	//locale = (navigator["language"] || "en").split("-")[0];
 
-	if(locale == 'en')
-	{
-		window.location.replace("index.html");
-	}
-	else
-	{
-		window.location.replace("index_gr.html");		
-	}
-	
 	
     //Setup the default view
-    var defaultView = { title: localization[locale], 
+    var defaultView = { title: 'Welcome!', 
     view:  bodyView,
     };
     

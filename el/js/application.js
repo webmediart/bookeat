@@ -19,16 +19,7 @@ $(document).ready( function(){
 	//alert(navigator["language"]);
 	locale = (navigator["language"] || "en").split("-")[0];
 
-	alert(locale);
 	
-	if(locale == 'en')
-	{
-		window.location.redirect("index.html");
-	}
-	else
-	{
-		window.location.redirect("index.html");
-	}
 	//localization = {
 		//"de": "Hallo Benutzer!",
 		//"en": "φ"

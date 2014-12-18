@@ -334,7 +334,10 @@ function marketRowMatchesCriteria( row, criteria ) {
     if ( criteria.snap == true )        {    if ( row[15] != "Y" ) return false;    };
     
     
-    if ( criteria.bakedGoods == true )  {    if ( row[16] != "Y" ) return false;    };
+    if ( criteria.niceview == true )  {    if ( row[16] != "Y" ) return false;    };
+	
+	
+	
     if ( criteria.cheese == true )      {    if ( row[17] != "Y" ) return false;    };
     if ( criteria.crafts == true )      {    if ( row[18] != "Y" ) return false;    };
     if ( criteria.flowers == true )     {    if ( row[19] != "Y" ) return false;    };

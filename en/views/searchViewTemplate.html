@@ -1,21 +1,29 @@
 
 <div id="searchView" >
     
+
     <div class="paragraph_noborder">
-        <strong>State:</strong><br/>
+        <strong>City:</strong><br/>
         <select id="search_state" ></select>
     </div>
     
     <div class="paragraph">
-        <strong>Search Phrase:</strong><br/>
+        <strong>Keyword Search:</strong><br/>
         <input type="text" id="search_searchPhrase" prompt="Search Phrase" />
-        <div class="subtext">You may enter a city name, zip code, county name, or market name in the search phrase field.</div>
+        <div class="subtext">You may enter a service or cuisine in the search field.</div>
         
         <div class="paragraph_noborder"><a class="button" id="searchButton" href="#">Search</a></div>
         
+		
+	
         <div class="paragraph">
-            <strong>Filter By Product:</strong><br/><br/>
-            <div class="searchfilter"><input type="checkbox" id="search_bakedGoods" /><label for="search_bakedGoods" id="bakedgoods" class="amenities">Baked Goods</label></div>
+        <strong>Filter By Service:</strong><br/><br/>
+        <div class="searchfilter">
+			
+		
+		<input type="checkbox" id="search_bakedGoods" /><label for="search_bakedGoods" id="niceview" class="amenities">Nice View</label></div>
+		
+
             <div class="searchfilter"><input type="checkbox" id="search_cheese" /><label for="search_cheese" id="cheese" class="amenities">Cheese</label></div>
             <div class="searchfilter"><input type="checkbox" id="search_crafts" /><label for="search_crafts" id="arts" class="amenities">Arts &amp; Crafts</label></div>
             <div class="searchfilter"><input type="checkbox" id="search_flowers" /><label for="search_flowers" id="flowers" class="amenities">Flowers</label></div>
@@ -45,4 +53,7 @@
             
         </div>
     </div>
+
 </div>
+
+

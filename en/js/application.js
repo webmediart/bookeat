@@ -112,8 +112,9 @@ function onAboutViewClick( event ) {
     return false;
 }
 
+// mike
 function onSearchViewClick( event ) {
-    var view = { title: "List",
+    var view = { title: "Insert Your Criteria, Search and Find Your Optimal Restaurant",
              backLabel: (isTablet() ? "Back" : " "),
              view: viewAssembler.searchView(),
            };

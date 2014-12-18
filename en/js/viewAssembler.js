@@ -126,7 +126,8 @@ ViewAssembler.prototype.searchView = function () {
     var el = $( templates.searchViewTemplate );
     var $state = el.find( "#search_state" );
     
-    var states = ["Athens","Αθήνα","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Chania","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Puerto Rico","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virgin Islands","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
+    var states = ["Athens","Chania","Heraklio Crete","Mikonos","Rethimno","Santorini","Thessaloniki"];
+	//,"Delaware","District of Columbia","Florida","Chania","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Puerto Rico","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virgin Islands","Virginia","Washington","West Virginia","Wisconsin","Wyoming"
     for ( var i in states ) {
         $state.append($("<option></option>").text(states[i]));
     }

@@ -279,7 +279,7 @@ function onSearchButtonClick( event ) {
 		//
         if ( index <= 1 ){
             value = $input.val();
-			alert($input.val());
+			//alert($input.val());
 		
 		
             

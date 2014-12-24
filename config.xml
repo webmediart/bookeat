@@ -25,14 +25,14 @@
         versionCode="10" 
         version   = "1.0.0">
 
-    <name>Page Slider</name>
+    <name>Bookeat</name>
 
     <description>
-        An application demonstrating hardware accelerated page transitions. 
+        An application for restaurant reservations. 
     </description>
 
-    <author href="https://coenraets.org" email="ccoenraets@gmail.com">
-        Christophe Coenraets
+    <author href="https://www.webmediart.com" email="maragakis@bookeat.gr">
+       Michael Maragakis
     </author>
 
 

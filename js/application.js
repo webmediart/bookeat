@@ -136,6 +136,7 @@ function onSearchViewClick( event ) {
 function onNearbyViewClick( event ) {
 
     var view = { title: "Nearby",
+			 backLabel: (isTablet() ? "Back" : " "),
              view: viewAssembler.findNearbyView()
            };
     window.viewNavigator.pushView( view );

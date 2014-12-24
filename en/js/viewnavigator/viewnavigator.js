@@ -14,9 +14,9 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 
 	this.supportsBackKey = true; //phonegap on android only
-	this.animating = true;
+	this.animating = false;
 	this.animationX = 150;
-	this.animationDuration = 20;
+	this.animationDuration = 0;
 	this.history = [];
 	this.scroller = null;
 	this.headerPadding = 5;
@@ -80,7 +80,7 @@ ViewNavigator.prototype.pushView = function( viewDescriptor ) {
 
 ViewNavigator.prototype.popView = function() {
 
-	if (this.history.length <= 1 )
+	if (this.animating || this.history.length <= 1 )
 		return;
 	
 	var currentViewDescriptor = this.history[ this.history.length-1];
@@ -355,7 +355,7 @@ ViewNavigator.prototype.guid = function() {
 }
 
 
- 
+
 /*  PHONEGAP INTEGRATION */
 /*
 //android+phonegap specific back button support - will only work if phonegap is used on android (www.phonegap.com)

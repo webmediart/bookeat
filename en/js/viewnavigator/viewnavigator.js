@@ -14,9 +14,9 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 
 	this.supportsBackKey = true; //phonegap on android only
-	this.animating = true;
+	this.animating = false;
 	this.animationX = 150;
-	this.animationDuration = 0;
+	this.animationDuration = 400;
 	this.history = [];
 	this.scroller = null;
 	this.headerPadding = 5;
@@ -180,7 +180,7 @@ ViewNavigator.prototype.updateView = function( viewDescriptor ) {
  	   	this.contentPendingRemove.animate({
    	 			left:this.contentViewHolder.width(),
     			avoidTransforms:false,
-    			useTranslate3d: false
+    			useTranslate3d: true
     		}, this.animationDuration*0.8);
     		
     	//remove this to change back
@@ -362,11 +362,9 @@ ViewNavigator.prototype.guid = function() {
 if ( typeof PhoneGap != 'undefined' ) { 
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
-
 function onDeviceReady() {
    document.addEventListener("backbutton", onBackKey, false);
 }
-
 function onBackKey( event ) {
 	event.preventDefault();
 	window.viewNavigator.popView();

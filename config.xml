@@ -34,8 +34,10 @@
     <author href="https://www.webmediart.com" email="maragakis@bookeat.gr">
        Michael Maragakis
     </author>
+<preference name="target-device" value="universal" />
+<preference name="android-minSdkVersion" value="8" />
 
-
+<preference name="phonegap-version" value="2.9.0" /> 
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="SuppressesIncrementalRendering" value="false" />
     <preference name="UIWebViewBounce" value="false" />

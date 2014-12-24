@@ -355,7 +355,7 @@ ViewNavigator.prototype.guid = function() {
 }
 
 
-
+ 
 /*  PHONEGAP INTEGRATION */
 /*
 //android+phonegap specific back button support - will only work if phonegap is used on android (www.phonegap.com)

@@ -15,8 +15,8 @@ var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 
 	this.supportsBackKey = true; //phonegap on android only
 	this.animating = false;
-	this.animationX = 150;
-	this.animationDuration = 400;
+	this.animationX = 10;
+	this.animationDuration = 10;
 	this.history = [];
 	this.scroller = null;
 	this.headerPadding = 5;

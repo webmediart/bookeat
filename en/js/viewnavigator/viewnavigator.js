@@ -14,7 +14,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 
 	this.supportsBackKey = true; //phonegap on android only
-	this.animating = false;
+	this.animating = true;
 	this.animationX = 150;
 	this.animationDuration = 0;
 	this.history = [];

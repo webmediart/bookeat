@@ -27,11 +27,14 @@ var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 	this.winPhone = (navigator.userAgent.search(regexp) >= 0);
 	
 	this.rootElement = $('<div class="viewNavigator_root"></div>');
-	this.header = $('<div class="viewNavigator_header"></div>');
-	this.content = $('<div class="viewNavigator_content" id="contentRoot"></div>');
-	this.rootElement.append( this.header );
-	this.rootElement.append( this.content );
-	
+this.footer = $('<div class="FOOTER"></div>');
+this.header = $('<div class="viewNavigator_header"></div>');
+this.content = $('<div class="viewNavigator_content" id="contentRoot"></div>');
+this.rootElement.append( this.header );
+this.rootElement.append( this.content );
+this.rootElement.append( this.footer );
+
+
 	this.parent = $( target );
 	
 	this.backLinkCSS = backLinkCSS ? backLinkCSS : "viewNavigator_backButton";

@@ -80,7 +80,7 @@ ViewNavigator.prototype.pushView = function( viewDescriptor ) {
 
 ViewNavigator.prototype.popView = function() {
 
-	if (this.animating || this.history.length <= 1 )
+	if (this.history.length <= 1 )
 		return;
 	
 	var currentViewDescriptor = this.history[ this.history.length-1];
@@ -103,7 +103,7 @@ ViewNavigator.prototype.setHeaderPadding = function( amount ) {
 
 ViewNavigator.prototype.updateView = function( viewDescriptor ) {
 	
-	this.animating = true;
+	this.animating = false;
 	
     
 	
@@ -354,8 +354,8 @@ ViewNavigator.prototype.guid = function() {
 	return (this.S4() + this.S4() + "-" + this.S4() + "-4" + this.S4().substr(0,3) + "-" + this.S4() + "-" + this.S4() + this.S4() + this.S4()).toLowerCase();
 }
 
- 
 
+ 
 /*  PHONEGAP INTEGRATION */
 /*
 //android+phonegap specific back button support - will only work if phonegap is used on android (www.phonegap.com)

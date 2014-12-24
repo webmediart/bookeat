@@ -27,15 +27,11 @@ var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 	this.winPhone = (navigator.userAgent.search(regexp) >= 0);
 	
 	this.rootElement = $('<div class="viewNavigator_root"></div>');
-this.footer = $('<div class="FOOTER"></div>');
-this.header = $('<div class="viewNavigator_header"></div>');
-this.content = $('<div class="viewNavigator_content" id="contentRoot"></div>');
-this.rootElement.append( this.header );
-this.rootElement.append( this.content );
-this.rootElement.append( this.footer );
-
-
-
+	this.header = $('<div class="viewNavigator_header"></div>');
+	this.content = $('<div class="viewNavigator_content" id="contentRoot"></div>');
+	this.rootElement.append( this.header );
+	this.rootElement.append( this.content );
+	
 	this.parent = $( target );
 	
 	this.backLinkCSS = backLinkCSS ? backLinkCSS : "viewNavigator_backButton";
@@ -84,7 +80,7 @@ ViewNavigator.prototype.pushView = function( viewDescriptor ) {
 
 ViewNavigator.prototype.popView = function() {
 
-	if (this.animating || this.history.length <= 1 )
+	if (this.history.length <= 1 )
 		return;
 	
 	var currentViewDescriptor = this.history[ this.history.length-1];
@@ -107,7 +103,7 @@ ViewNavigator.prototype.setHeaderPadding = function( amount ) {
 
 ViewNavigator.prototype.updateView = function( viewDescriptor ) {
 	
-	this.animating = true;
+	this.animating = false;
 	
     
 	
@@ -359,7 +355,7 @@ ViewNavigator.prototype.guid = function() {
 }
 
 
-
+ 
 /*  PHONEGAP INTEGRATION */
 /*
 //android+phonegap specific back button support - will only work if phonegap is used on android (www.phonegap.com)

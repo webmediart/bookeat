@@ -16,7 +16,7 @@ var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 	this.supportsBackKey = true; //phonegap on android only
 	this.animating = false;
 	this.animationX = 150;
-	this.animationDuration = 400;
+	this.animationDuration = 0;
 	this.history = [];
 	this.scroller = null;
 	this.headerPadding = 5;
@@ -180,7 +180,7 @@ ViewNavigator.prototype.updateView = function( viewDescriptor ) {
  	   	this.contentPendingRemove.animate({
    	 			left:this.contentViewHolder.width(),
     			avoidTransforms:false,
-    			useTranslate3d: true
+    			useTranslate3d: false
     		}, this.animationDuration*0.8);
     		
     	//remove this to change back

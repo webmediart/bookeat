@@ -83,6 +83,91 @@ ViewNavigator.prototype.popView = function() {
 	if (this.history.length <= 1 )
 		return;
 	
+	var currentViewDescriptor = t/*
+THIS SOFTWARE IS PROVIDED BY ANDREW M. TRICE ''AS IS'' AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ANDREW M. TRICE OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+
+var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
+
+	this.supportsBackKey = true; //phonegap on android only
+	this.animating = true;
+	this.animationX = 150;
+	this.animationDuration = 20;
+	this.history = [];
+	this.scroller = null;
+	this.headerPadding = 5;
+	
+	this.uniqueId = this.guid();
+	
+	var regexp = new RegExp("Windows Phone OS 7");	
+	this.winPhone = (navigator.userAgent.search(regexp) >= 0);
+	
+	this.rootElement = $('<div class="viewNavigator_root"></div>');
+	this.header = $('<div class="viewNavigator_header"></div>');
+	this.content = $('<div class="viewNavigator_content" id="contentRoot"></div>');
+	this.rootElement.append( this.header );
+	this.rootElement.append( this.content );
+	
+	this.parent = $( target );
+	
+	this.backLinkCSS = backLinkCSS ? backLinkCSS : "viewNavigator_backButton";
+	
+	var self = this;
+	//$(window).resize( function(event){ self.resizeContent() } );
+	//alert( this.parent.toString() );
+	//this.parent.resize( function(event){ self.resizeContent() } );
+	
+	if ( bindToWindow != false ) {
+		$(window).resize( function(event){ self.resizeContent() } );
+	}
+	else {
+		this.parent.resize( function(event){ self.resizeContent() } );
+	}
+	
+	this.parent.append( this.rootElement );
+	
+	if ( window.viewNavigators == null || window.viewNavigators == undefined ) {
+		window.viewNavigators = {};
+	}
+	window.viewNavigators[ this.uniqueId ] = this; 
+
+}
+
+ViewNavigator.prototype.replaceView = function( viewDescriptor ) {
+	if (this.animating)
+		return;
+	viewDescriptor.animation = "pushEffect"
+	
+	//this is a hack to mimic behavior of pushView, then pop off the "current" from the history
+	this.history.push( viewDescriptor );
+	this.updateView( viewDescriptor );
+	this.history.pop();
+	this.history.pop();
+	this.history.push( viewDescriptor );
+}
+
+ViewNavigator.prototype.pushView = function( viewDescriptor ) {
+	if (this.animating)
+		return;
+	viewDescriptor.animation = "pushEffect"
+	this.history.push( viewDescriptor );
+	this.updateView( viewDescriptor );
+}
+
+ViewNavigator.prototype.popView = function() {
+
+	if (this.history.length <= 1 )
+		return;
+	
 	var currentViewDescriptor = this.history[ this.history.length-1];
 	if ( currentViewDescriptor.backCallback ) {
 		currentViewDescriptor.backCallback();
@@ -103,7 +188,7 @@ ViewNavigator.prototype.setHeaderPadding = function( amount ) {
 
 ViewNavigator.prototype.updateView = function( viewDescriptor ) {
 	
-	this.animating = false;
+	this.animating = true;
 	
     
 	
